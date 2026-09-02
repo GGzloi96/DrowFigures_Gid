@@ -21,7 +21,7 @@
             </MenuItem>
             <MenuItem Header="Rectangle" Width="380" FontSize="48">
                 <MenuItem Name = "Random_CreateRectangle" Header="Random_Create"   FontSize="24" Click="RandomCreateRectangle"  />
-                <MenuItem Name = "Create_Whith_ParamsRectangle" Header="Create_With_Params"  FontSize="24" />
+                <MenuItem Name = "Create_Whith_ParamsRectangle" Header="Create_With_Params"  FontSize="24" Click="CteateWithParamsRectangle" />
             </MenuItem>
             
         </Menu>

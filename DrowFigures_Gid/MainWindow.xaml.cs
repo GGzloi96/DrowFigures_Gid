@@ -103,5 +103,13 @@ namespace DrowFigures_Gid
             DrawRectangle(rect);
 
         }
+
+        private void CteateWithParamsRectangle(object sender, RoutedEventArgs e)
+        {
+            ClearScene();
+            InputParamsRectangle IPR = new InputParamsRectangle(this);
+            IPR.ShowDialog();
+            DrawRectangle(rect);
+        }
     }
 }
