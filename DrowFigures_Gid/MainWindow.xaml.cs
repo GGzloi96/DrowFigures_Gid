@@ -31,6 +31,7 @@ namespace DrowFigures_Gid
             Point2D P3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
 
             tr = new Triangle(P1, P2, P3);
+            
         }
 
         public void DrawLine(Point2D p1, Point2D p2)
@@ -63,8 +64,20 @@ namespace DrowFigures_Gid
             Scene.Children.Clear();
         }
 
+        private void RandomCreateTriangle(object sender, RoutedEventArgs e)
+        {   
+            ClearScene();
+            Point2D P1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D P2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D P3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
 
+            tr = new Triangle(P1, P2, P3);
+            DrawTriangle(tr);
+        }
 
+        private void CteateWithParamsTriangle(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

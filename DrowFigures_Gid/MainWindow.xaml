@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrowFigures_Gid"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Canvas x:Name="Scene" HorizontalAlignment="Left" Height="400" Margin="15,0,0,0" VerticalAlignment="Center" Width="680"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+
+            <MenuItem Width="400" Height="129" Header="Triangle" FontSize="48">
+                <MenuItem Name = "Random_Create" Header="Random_Create" Width="400" Height="129" FontSize="24" Click="RandomCreateTriangle" />
+                <MenuItem Name = "Create_Whith_Params" Header="Create_Whith_Params"  Width="400" Height="129" FontSize="24" Click="CteateWithParamsTriangle"/>
+            </MenuItem>
+            
+        </Menu>
+        
+
+        <Canvas x:Name="Scene" Grid.Row="2" HorizontalAlignment="Center" Height="350" Margin="5,20,5,5" VerticalAlignment="Center" Width="680"/>
+        
+
     </Grid>
 </Window>
