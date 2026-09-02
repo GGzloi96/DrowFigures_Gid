@@ -20,8 +20,8 @@ namespace DrowFigures_Gid
     /// </summary>
     public partial class MainWindow : Window
     {
-        Triangle tr;
-        Rectangle rect;
+        public Triangle tr;
+        public Rectangle rect;
         Random rnd = new Random();
 
         public MainWindow()
@@ -86,7 +86,11 @@ namespace DrowFigures_Gid
 
         private void CteateWithParamsTriangle(object sender, RoutedEventArgs e)
         {
-
+            ClearScene();
+            InputParamsTriangle IPT = new InputParamsTriangle(this);
+            IPT.ShowDialog();
+            DrawTriangle(tr);
+            
         }
 
         private void RandomCreateRectangle(object sender, RoutedEventArgs e)

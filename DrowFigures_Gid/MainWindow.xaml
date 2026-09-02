@@ -17,7 +17,7 @@
 
             <MenuItem Width="400" Height="129" Header="Triangle" FontSize="48">
                 <MenuItem Name = "Random_CreateTriangle" Header="Random_Create"  FontSize="24" Click="RandomCreateTriangle" />
-                <MenuItem Name = "Create_Whith_ParamsTriangle" Header="Create_With_Params"  FontSize="24" Click="CteateWithParamsTriangle"/>
+                <MenuItem Name = "Create_Whith_ParamsTriangle" Header="Create_With_Params" FontSize="24" Click="CteateWithParamsTriangle"/>
             </MenuItem>
             <MenuItem Header="Rectangle" Width="380" FontSize="48">
                 <MenuItem Name = "Random_CreateRectangle" Header="Random_Create"   FontSize="24" Click="RandomCreateRectangle"  />
