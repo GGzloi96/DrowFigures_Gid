@@ -21,6 +21,7 @@ namespace DrowFigures_Gid
     public partial class MainWindow : Window
     {
         Triangle tr;
+        Rectangle rect;
         Random rnd = new Random();
 
         public MainWindow()
@@ -58,6 +59,14 @@ namespace DrowFigures_Gid
             DrawLine(tr.P3, tr.P1);
         }
 
+        public void DrawRectangle(Rectangle rect)
+        {
+            DrawLine(rect.MainP, rect.P2);
+            DrawLine(rect.P2, rect.P3);
+            DrawLine(rect.P3, rect.P4);
+            DrawLine(rect.P4, rect.MainP);
+        }
+
         public void ClearScene()
         {
             
@@ -77,6 +86,17 @@ namespace DrowFigures_Gid
 
         private void CteateWithParamsTriangle(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void RandomCreateRectangle(object sender, RoutedEventArgs e)
+        {
+            ClearScene();
+            int RandomHight = rnd.Next(1, (int)Scene.Height);
+            int RandomWidth = rnd.Next(1, (int)Scene.Width);
+            Point2D MainPoint = new Point2D(rnd.Next(0, ((int)Scene.Width) - RandomWidth), rnd.Next(0, ((int)Scene.Height) - RandomHight));
+            rect = new Rectangle(MainPoint,RandomWidth,RandomHight);
+            DrawRectangle(rect);
 
         }
     }
