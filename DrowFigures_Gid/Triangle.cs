@@ -28,9 +28,9 @@ namespace DrowFigures_Gid
 
         public void AddY(int y)
         {
-            P1.AddX(y);
-            P2.AddX(y);
-            P3.AddX(y);
+            P1.AddY(y);
+            P2.AddY(y);
+            P3.AddY(y);
 
         }
     }

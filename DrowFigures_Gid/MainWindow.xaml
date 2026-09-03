@@ -28,6 +28,12 @@
         
 
         <Canvas x:Name="Scene" Grid.Row="2" HorizontalAlignment="Center" Height="350" Margin="5,20,5,5" VerticalAlignment="Center" Width="680"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock  Text="X:" Width="100" FontSize="24"/>
+            <Slider Name="_MoveX" Width="300" TickPlacement="BottomRight" Minimum="-100" ValueChanged="MoveX" SmallChange="1" IsMoveToPointEnabled="True" IsSnapToTickEnabled="True" Maximum="100" />
+            <TextBlock  Text="Y:"  Width="100" FontSize="24"/>
+            <Slider Name="_MoveY" Width="300" TickPlacement="BottomRight" Minimum="-10" IsSnapToTickEnabled="True" ValueChanged="MoveY" />
+        </StackPanel>
         
 
     </Grid>
