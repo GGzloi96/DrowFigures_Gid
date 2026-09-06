@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrowFigures_Gid"
         mc:Ignorable="d"
-        Title="InputParamsRectangle" Height="350" Width="300">
+        Title="InputParamsRectangle" Height="400" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0">
             <TextBlock Text="Координаты точки:" Height="100" FontSize="24" TextWrapping="Wrap"/>
@@ -24,6 +28,10 @@
         <TextBox x:Name="T2" Grid.Column="1" HorizontalAlignment="Left" Margin="80,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="50" FontSize="24"/>
         <TextBox x:Name="T3" Grid.Column="1" HorizontalAlignment="Left" Margin="0,105,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" Height="100" FontSize="24"/>
         <TextBox x:Name="T4" Grid.Column="1" HorizontalAlignment="Left" Margin="0,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" Height="100" FontSize="24"/>
-        <Button Content="Созранить и выйти" Grid.ColumnSpan="2" Margin="0,307,0,0" Click="InputParams"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Button Content="Созранить и выйти" Grid.ColumnSpan="2" Height="50"  Click="InputParams"/>
+            <Button Content="Рандомные числа" Grid.ColumnSpan="2" Height="50" Click="RandomNum"   />
+        </StackPanel>
     </Grid>
+    
 </Window>

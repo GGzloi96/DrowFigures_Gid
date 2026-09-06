@@ -83,6 +83,11 @@ namespace DrowFigures_Gid
             tr = new Triangle(P1, P2, P3);
             rect = null;
             DrawTriangle(tr);
+
+            int RandomHight = rnd.Next(1, (int)Scene.Height);
+            int RandomWidth = rnd.Next(1, (int)Scene.Width);
+            Point2D MainPoint = new Point2D(rnd.Next(0, ((int)Scene.Width) - RandomWidth), rnd.Next(0, ((int)Scene.Height) - RandomHight));
+            rect = new Rectangle(MainPoint, RandomWidth, RandomHight);
         }
 
         private void CteateWithParamsTriangle(object sender, RoutedEventArgs e)
@@ -135,13 +140,13 @@ namespace DrowFigures_Gid
             ClearScene();
             if (tr == null)
             {
-                rect.AddY((int)(e.NewValue - e.OldValue));
+                rect.AddY((int)(e.OldValue - e.NewValue));
                 DrawRectangle(rect);
             }
 
             else
             {
-                tr.AddY((int)(e.NewValue - e.OldValue));
+                tr.AddY((int)(e.OldValue - e.NewValue));
                 DrawTriangle(tr);
             }
         }

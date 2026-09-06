@@ -27,19 +27,19 @@ namespace DrowFigures_Gid
 
         public void AddX(int x)
         {
-            MainP.X += x;
-            P2.X += x;
-            P3.X += x;
-            P4.X += x;
+            MainP.AddX(x);
+            P2.AddX(x);
+            P3.AddX(x);
+            P4.AddX(x);
 
         }
 
         public void AddY(int y)
         {
-            MainP.Y += y;
-            P2.Y += y;
-            P3.Y += y;
-            P4.Y += y;
+            MainP.AddY(y);
+            P2.AddY(y);
+            P3.AddY(y);
+            P4.AddY(y);
 
         }
     }
