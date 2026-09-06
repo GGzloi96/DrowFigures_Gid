@@ -20,6 +20,7 @@ namespace DrowFigures_Gid
     public partial class InputParamsTriangle : Window
     {
         MainWindow window;
+        Random rnd = new Random();
         public InputParamsTriangle()
         {
             InitializeComponent();
@@ -37,6 +38,16 @@ namespace DrowFigures_Gid
             myTr.P2 = new Point2D(int.Parse(T3.Text), int.Parse(T4.Text));
             myTr.P3 = new Point2D(int.Parse(T5.Text), int.Parse(T6.Text));
             this.Close();
+        }
+
+        private void RandomNums(object sender, RoutedEventArgs e)
+        {
+            T1.Text = Convert.ToString(rnd.Next(0, ((int)window.Scene.Width)));
+            T2.Text = Convert.ToString(rnd.Next(0, ((int)window.Scene.Height)));
+            T3.Text = Convert.ToString(rnd.Next(0, ((int)window.Scene.Width)));
+            T4.Text = Convert.ToString(rnd.Next(0,(int)window.Scene.Height));
+            T5.Text = Convert.ToString(rnd.Next(0,(int)window.Scene.Width));
+            T6.Text = Convert.ToString(rnd.Next(0,(int)window.Scene.Height));
         }
     }
 }

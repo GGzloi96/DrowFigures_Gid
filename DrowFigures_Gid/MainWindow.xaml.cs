@@ -81,7 +81,13 @@ namespace DrowFigures_Gid
             Point2D P3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
 
             tr = new Triangle(P1, P2, P3);
+            rect = null;
             DrawTriangle(tr);
+
+            int RandomHight = rnd.Next(1, (int)Scene.Height);
+            int RandomWidth = rnd.Next(1, (int)Scene.Width);
+            Point2D MainPoint = new Point2D(rnd.Next(0, ((int)Scene.Width) - RandomWidth), rnd.Next(0, ((int)Scene.Height) - RandomHight));
+            rect = new Rectangle(MainPoint, RandomWidth, RandomHight);
         }
 
         private void CteateWithParamsTriangle(object sender, RoutedEventArgs e)
@@ -100,6 +106,7 @@ namespace DrowFigures_Gid
             int RandomWidth = rnd.Next(1, (int)Scene.Width);
             Point2D MainPoint = new Point2D(rnd.Next(0, ((int)Scene.Width) - RandomWidth), rnd.Next(0, ((int)Scene.Height) - RandomHight));
             rect = new Rectangle(MainPoint,RandomWidth,RandomHight);
+            tr = null;
             DrawRectangle(rect);
 
         }
@@ -111,5 +118,38 @@ namespace DrowFigures_Gid
             IPR.ShowDialog();
             DrawRectangle(rect);
         }
+
+        private void MoveX(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ClearScene();
+             if (tr == null)
+            {
+                rect.AddX((int)(e.NewValue - e.OldValue));
+                DrawRectangle(rect);
+            }
+
+            else
+            {
+                tr.AddX((int)(e.NewValue - e.OldValue));
+                DrawTriangle(tr);
+            }
+        }
+
+        private void MoveY(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ClearScene();
+            if (tr == null)
+            {
+                rect.AddY((int)(e.OldValue - e.NewValue));
+                DrawRectangle(rect);
+            }
+
+            else
+            {
+                tr.AddY((int)(e.OldValue - e.NewValue));
+                DrawTriangle(tr);
+            }
+        }
     }
+    
 }
